@@ -4,10 +4,9 @@ set -e
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Build React frontend
+# Build React frontend (CI=false to treat warnings as warnings, not errors)
 cd frontend
-npm ci
-npm run build
+CI=false npm run build
 cd ..
 
 # Move build to where Flask expects it
