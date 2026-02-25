@@ -4,8 +4,9 @@ set -e
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Build React frontend (CI=false to treat warnings as warnings, not errors)
+# Build React frontend
 cd frontend
+npm ci
 CI=false npm run build
 cd ..
 
